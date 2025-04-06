@@ -67,9 +67,22 @@ print(a)
 #print(b)
 print('-'*80)
 
+a = 10
+f = lambda n: print(a**n)
+print(f(2))
+print()
 
+print(True)
+def print(x):
+    #print('In new print function.')
+    return 'hello {0}'.format(x)
+print('world')
+del print
+print('world')
+print('.'*40)
 
-
-
+for i in range(10):
+    x = 2 * i
+print(x)
 
 
