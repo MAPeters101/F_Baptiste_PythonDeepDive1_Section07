@@ -26,4 +26,16 @@ def outer_func():
 outer_func()
 print('-'*80)
 
+def outer_func():
+    x = 'hello'
+    def inner():
+        nonlocal x
+        x = 'python'
+        print('inner:', x)
+    print('outer(before calling inner):', x)
+    inner()
+    print('outer(after calling inner):', x)
+outer_func()
+print('-'*80)
+
 
