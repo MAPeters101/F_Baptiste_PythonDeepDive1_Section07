@@ -72,7 +72,36 @@ print(fn.__closure__)
 print(hex(id(1)))
 print('.'*80)
 
+def outer():
+    count = 0
+    def inc1():
+        nonlocal count
+        count += 1
+        return count
+    def inc2():
+        nonlocal count
+        count += 1
+        return count
+    return inc1, inc2
+fn1, fn2 = outer()
+print(fn1.__code__.co_freevars)
+print(fn2.__code__.co_freevars)
+print(fn1.__closure__)
+print(fn2.__closure__)
+print()
 
+print(fn1())
+print(fn1.__code__.co_freevars)
+print(fn2.__code__.co_freevars)
+print(fn1.__closure__)
+print(fn2.__closure__)
+print()
 
+print(fn2())
+print(fn1.__code__.co_freevars)
+print(fn2.__code__.co_freevars)
+print(fn1.__closure__)
+print(fn2.__closure__)
+print()
 
 
