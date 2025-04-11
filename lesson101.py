@@ -50,4 +50,18 @@ def outer():
 outer()
 print('-'*80)
 
+def outer():
+    x = 'hello'
+    def inner1():
+        nonlocal x
+        x = 'python'
+        def inner2():
+            nonlocal x
+            x = 'monty'
+        inner2()
+    inner1()
+    print(x)
+outer()
+print('-'*80)
+
 
