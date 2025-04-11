@@ -64,4 +64,41 @@ def outer():
 outer()
 print('-'*80)
 
+# x = 'python'
+# print(x)
+# def outer():
+#     global x
+#     x = 'monty'
+#     def inner():
+#         nonlocal x
+#         x = 'hello'
+#     print(x)
+# outer()
+
+x = 'python'
+print(x)
+def outer():
+    #global x
+    x = 'monty'
+    def inner():
+        nonlocal x
+        x = 'hello'
+    print(x)
+outer()
+print()
+
+x = 'python'
+print(x)
+def outer():
+    #global x
+    x = 'monty'
+    def inner():
+        nonlocal x
+        x = 'hello'
+    inner()
+    print(x)
+outer()
+print(x)
+print('-'*80)
+
 
