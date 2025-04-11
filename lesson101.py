@@ -16,4 +16,14 @@ def outer_func():
 outer_func()
 print('-'*80)
 
+def outer_func():
+    x = 'hello'
+    def inner():
+        x = 'python'
+        print('inner:', x)
+    inner()
+    print('outer:', x)
+outer_func()
+print('-'*80)
+
 
