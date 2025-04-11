@@ -54,6 +54,24 @@ print(fn.__closure__)
 fn()
 print('-'*80)
 
+def outer():
+    count = 0
+    def inc():
+        nonlocal count
+        count += 1
+        return count
+    return inc
+fn = outer()
+print(fn.__code__.co_freevars)
+print(fn.__closure__)
+print(hex(id(0)))
+print()
+
+print(fn())
+print(fn.__closure__)
+print(hex(id(1)))
+print('.'*80)
+
 
 
 
