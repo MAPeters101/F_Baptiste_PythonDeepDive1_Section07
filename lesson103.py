@@ -18,3 +18,14 @@ def outer():
 fn, x = outer()
 fn()
 print('-'*80)
+
+def outer():
+    x = 'python'
+    print('outer:', hex(id(x)), x)
+    def inner():
+        x = 'python'
+        print('inner:', hex(id(x)), x)
+    return inner, x
+fn, x = outer()
+fn()
+print('-'*80)
