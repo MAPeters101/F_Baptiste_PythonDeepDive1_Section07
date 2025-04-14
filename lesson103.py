@@ -103,5 +103,22 @@ print(fn2.__code__.co_freevars)
 print(fn1.__closure__)
 print(fn2.__closure__)
 print()
+print('.'*80)
+
+def pow(n):
+    def inner(x):
+        return x ** n
+    return inner
+square = pow(2)
+print(square.__closure__)
+print(hex(id(2)))
+
+print(square)
+print()
+
+cube = pow(3)
+print(cube.__closure__)
+print(hex(id(3)))
+print(cube(5))
 
 
