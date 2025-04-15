@@ -46,6 +46,30 @@ print(a.__closure__)
 print(b.__closure__)
 print('-'*80)
 
+def averager():
+    total = 0
+    count = 0
+    def add(number):
+        nonlocal total
+        nonlocal count
+        total += number
+        count += 1
+        return total / count
+    return add
+
+a = averager()
+print(a(10))
+print(a(20))
+print(a(30))
+print()
+
+b = averager()
+print(b(10))
+print(b(20))
+print(b(30))
+print('.'*80)
+
+
 
 
 
