@@ -138,5 +138,21 @@ print(add_2(10))
 print(add_3(10))
 print('.'*80)
 
+from pprint import pprint
+adders = []
+for n in range(1,4):
+    adders.append(lambda x: x+n)
+pprint(adders)
+print(n)
+
+print(adders[0].__closure__)
+print(adders[1].__closure__)
+print(adders[2].__closure__)
+print()
+print(adders[0](10))
+print(adders[1](10))
+print(adders[2](10))
+print('.'*80)
+
 
 
