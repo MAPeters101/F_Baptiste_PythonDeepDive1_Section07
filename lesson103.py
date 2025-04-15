@@ -172,4 +172,29 @@ print(adders[1](10))
 print(adders[2](10))
 print('-'*80)
 
+def create_adders():
+    adders = []
+    for n in range(1, 4):
+        adders.append(lambda x, y=n: x + y)
+    return adders
+
+adders = create_adders()
+pprint(adders)
+print()
+print(adders[0].__closure__)
+print(adders[1].__closure__)
+print(adders[2].__closure__)
+print()
+print(adders[0].__code__.co_freevars)
+print(adders[1].__code__.co_freevars)
+print(adders[2].__code__.co_freevars)
+print()
+print(adders[0](10))
+print(adders[1](10))
+print(adders[2](10))
+print()
+
+print(adders[0](10, 5))
+print(adders[1](10, 5))
+print(adders[2](10, 5))
 
