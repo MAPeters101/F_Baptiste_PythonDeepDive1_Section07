@@ -91,6 +91,22 @@ print(b.add(20))
 print(b.add(30))
 print('=-'*40)
 
+from time import perf_counter
+
+print(perf_counter())
+print(perf_counter())
+
+class Timer:
+    def __init__(self):
+        self.start = perf_counter()
+
+    def poll(self):
+        return perf_counter() - self.start
+
+t1 = Timer()
+print(t1.poll())
+print(t1.poll())
+print('-'*80)
 
 
 
