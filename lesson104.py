@@ -67,8 +67,29 @@ b = averager()
 print(b(10))
 print(b(20))
 print(b(30))
-print('.'*80)
+print('='*80)
 
+class Averager:
+    def __init__(self):
+        self.total = 0
+        self.count = 0
+
+    def add(self, number):
+        self.total += number
+        self.count += 1
+        return self.total / self.count
+
+a = Averager()
+print(a.add(10))
+print(a.add(20))
+print(a.add(30))
+print()
+
+b = Averager()
+print(b.add(10))
+print(b.add(20))
+print(b.add(30))
+print('=-'*40)
 
 
 
