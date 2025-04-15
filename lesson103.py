@@ -120,5 +120,23 @@ cube = pow(3)
 print(cube.__closure__)
 print(hex(id(3)))
 print(cube(5))
+print('.'*80)
+
+def adder(n):
+    def inner(x):
+        return x + n
+    return inner
+add_1 = adder(1)
+add_2 = adder(2)
+add_3 = adder(3)
+
+print(add_1.__closure__)
+print(add_2.__closure__)
+print(add_3.__closure__)
+print(add_1(10))
+print(add_2(10))
+print(add_3(10))
+print('.'*80)
+
 
 
